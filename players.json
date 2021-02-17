@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Jan",
+    "state": "CZE",
+    "points": "87.63"
+  },
+  {
+    "id": 2,
+    "name": "Hans",
+    "state": "GER",
+    "points": "87.25"
+  },
+  {
+    "id": 3,
+    "name": "Ivan",
+    "state": "RUS",
+    "points": "90.13"
+  },
+  {
+    "id": 4,
+    "name": "Jacek",
+    "state": "POL",
+    "points": "79.85"
+  },
+  {
+    "id": 5,
+    "name": "John",
+    "state": "GBR",
+    "points": "79.47"
+  },
+  {
+    "id": 6,
+    "name": "Eric",
+    "state": "USA",
+    "points": "81.75"
+  }
+]

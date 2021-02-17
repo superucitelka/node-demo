@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+  <title>Demo</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <header class="jumbotron-fluid bg-info p-5">
+    <h1 class="text-center display-3 text-white">Hráči</h1>
+  </header>
+  <main class="container-fluid">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Jméno</th>
+          <th>Stát</th>
+          <th>Body</th>
+          <th>Akce</th>
+        </tr>
+      </thead>
+      <tbody id="list">
+        <!-- Zde budou zobrazovány údaje o jednotlivých hráčích jako řádky tabulky - viz funkce getAll() v main.js -->
+      </tbody>
+    </table>
+    <!-- Modal dialog pro zápis hráče -->
+    <!-- Tlačítko pro vytvoření nového záznamu o hráči:
+    data-toggle="modal" - umožňuje dynamické zobrazení okna
+    data-target="#modelId" - odkazuje na id dialogového okna
+    -->
+    <button type="button" id="create" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+      Nový záznam
+    </button>
+  </main>
+  <!-- Samotné modální dialogové okno -->
+  <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h5 class="modal-title">Karta hráče</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="text-light">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <!-- Formulář s prvky pro editaci údajů o hráčích - každý prvek je identifikován pomocí id  -->
+            <form>
+              <div class="form-group row" style="display:none">
+                <label for="id" class="col-sm-3 col-form-label">ID</label>
+                <div class="col-sm-9">
+                  <input type="hidden" class="form-control" id="id">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label">Jméno</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="name">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="state" class="col-sm-3 col-form-label">Stát</label>
+                <div class="col-sm-9">
+                    <select class="custom-select" id="state">
+                      <option value="CZE">Česká republika</option>
+                      <option value="FRA">Francie</option>
+                      <option value="ITA">Itálie</option>
+                      <option value="GER">Německo</option>
+                      <option value="POL">Polsko</option>
+                      <option value="RUS">Rusko</option>
+                      <option value="USA">USA</option>
+                      <option value="GBR">Velká Británie</option>
+                    </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label">Body</label>
+                <div class="col-sm-9">
+                  <input type="number" class="form-control" id="points" step="0.01">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer bg-light">
+          <!-- Obě tlačítka umožní po kliknutí potlačení zobrazení modálního okna (data-dismiss="modal")  -->
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Zrušit</button>
+          <!-- Akce pro tlačítko Uložit jsou ošetřeny ve skriptu main.js -->
+          <button type="button" id="submit" class="btn btn-info" data-dismiss="modal">Uložit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+  </script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
